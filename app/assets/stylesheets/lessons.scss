@@ -1,0 +1,86 @@
+// Place all the styles related to the lessons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.lesson {
+  background: #73B4D2;
+  font-family: 'Asap', sans-serif;
+  font-size: 13pt;
+  padding: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  min-height: 100vh;
+  margin: 0 1%;
+  border-radius: 3px;
+  box-shadow: 0px 6px 20px #6293A8;
+}
+
+.click-me {
+  margin-left: 1rem;
+  user-select: none;
+}
+
+.line {
+  border-bottom: 1px dotted #ccc;
+}
+
+.link {
+  color: #73B4D2;
+  text-decoration: none;
+}
+
+.link:visited {
+  color: #73B4D2;
+}
+
+.link:hover {
+  color: #6293A8;
+  text-decoration: underline;
+}
+
+.exercise {
+  color: #E16459;
+}
+
+.left-space {
+  margin-left: 1rem;
+}
+
+/* Instructions */
+
+.container {
+  margin: 0 1rem;
+}
+
+.indented-example {
+  margin-left: 1rem;
+  background: #ddd;
+  width: fit-content;
+  min-width: 80%;
+  padding: 1rem;
+  border-radius: 2px;
+  font-weight: 100;
+  border-left: 4px solid #73B4D2;
+}
+
+@media (min-width: 480px) {
+  .lesson {
+    padding: 1rem 5%;
+  }
+
+  .container {
+    padding: 0 5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .lesson {
+    padding: 1rem 20%;
+  }
+}

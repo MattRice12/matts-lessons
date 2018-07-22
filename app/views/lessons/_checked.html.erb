@@ -1,0 +1,146 @@
+<main>
+  <div class="container checked">
+    <h2>:checked</h2>
+    <p>We've discussed a few CSS pseudo-classes before:
+      <ul>
+        <li> :hover --> which applies styles to an element when your mouse hovers over that element. </li>
+        <li> :visited --> which applies styles to an a-tag (a link) if that link has been visited. </li>
+      </ul>
+    </p>
+
+    <p>Today, let's discuss the pseudoclass :checked. This applies to an element, typically a radio button or checkbox, that is selected.</p>
+    <div class="indented-example">
+      <label for="radioExample">Radio</label>
+      <input type="radio" id="radioExample" />
+
+      <label for="checkboxExample">Checkbox</label>
+      <input type="checkbox" id="checkboxExample"/>
+    </div>
+    <p>
+      Radio buttons and checkboxes have 2 possible values, either checked or not checked. In other words, their values are binary. CSS let's us take advantage of these predictable states.
+    </p>
+    <p>
+      When the element is checked, we can tell it to do one thing
+    </p>
+    <p>
+      <div class="indented-example">
+        <div>input[type="radio"]:checked { </div>
+        <div class="left-space">/* some styling */</div>
+        <div>}</div>
+      </div>
+    </p>
+    <p>
+      Using the :not pseudo-class, we can tell the element to do somethign else:
+    </p>
+    <p>
+      <div class="indented-example">
+        <div>input[type="radio"]:not(:checked) { </div>
+        <div class="left-space">/* some styling */</div>
+        <div>}</div>
+      </div>
+    </p>
+    <p>
+      <p>Additionally, using the CSS sibling selectors (~ and +), the child selector (>), or the descendant selector (space), we can affect the neighboring elements based on the radio or checkbox's state:
+      </p>
+      <div class="indented-example">
+        <div>div { </div>
+          <div class="left-space">display: none;</div>
+        <div>}</div>
+        <br />
+        <div>input[type="checkbox"]:checked ~ div { </div>
+        <div class="left-space">display: block;</div>
+        <div>}</div>
+      </div>
+    </p>
+
+    <p>
+      <p>We should use the elements' classes to more specifically target the content we want
+      </p>
+      <div class="indented-example">
+        <div>.nav { </div>
+          <div class="left-space">display: none;</div>
+        <div>}</div>
+        <br />
+        <div>.nav-checkbox:checked ~ .nav { </div>
+        <div class="left-space">display: block;</div>
+        <div>}</div>
+      </div>
+    </p>
+
+    <p>
+      Ultimately what we're aiming for is something like this:
+    </p>
+    <div class="checked-example">
+      <input type="checkbox" class="nav-checkbox" id="navHamburger" />
+      <label class="nav-menu-label" for="navHamburger"><i class="fas fa-bars"></i></label><span class="click-me"><-- Click me!</span>
+      <ul class="nav-list">
+        <li>Home</li>
+        <li>Design</li>
+        <li>Develop</li>
+        <li>Strategy</li>
+      </ul>
+    </div>
+
+    <h2 class="exercise">Exercise!</h2>
+    <p>
+      Recreate the above nav menu, focusing primarily on getting the content to be visible only when the checkbox is checked.
+    </p>
+
+    <div class="line"> </div>
+    <h3>Helpful Styling Info</h3>
+    <p><b>1) Hide the Button</b>
+      <p>To hide the default radio button and to use a custom icon, we need to:
+        <ol>
+          <li>link a label to the radio or checkbox, and </li>
+          <li>set the checkbox display to none. </li>
+        </ol>
+      </p>
+      <p>
+        To link the label to the radio or checkbox, the "id" attribute on the radio or checkbox and the "for" attribute on the label need to match and need to be unique (meaning this specific name isn't used elsewhere). This link lets the label find it's associated radio or checkbox.
+      </p>
+      <p>
+        By connecting the label to the checkbox, we don't actually need the checkbox present to check or uncheck it. Clicking the label will do the same thing.
+      </p>
+      <div class="indented-example">
+
+        <div>&lt;input type="checkbox" class="nav-checkbox" id="navHamburger" /&gt;</div>
+        <div>&lt;label class="nav-menu-label" for="navHamburger"&gt </div>
+          <div class="left-space">&lt;i class="fas fa-bars"&gt&lt;/i&gt</div>
+        <div>&lt;/label&gt;</div>
+        <br />
+        <div>.nav-checkbox { </div>
+        <div class="left-space">display: none;</div>
+        <div>}</div>
+      </div>
+      <p><b>2) Icon</b>
+        <p>
+          My nav icon is taken from the <a href="https://fontawesome.com/" class="link">font-awesome library</a>. I set the icon as the label by inserting it between the opening and closing label tags.
+        </p>
+        <div class="indented-example">
+          <div>&lt;label&gt </div>
+            <div class="left-space">&lt;i class="fas fa-bars"&gt&lt;/i&gt</div>
+          <div>&lt;/label&gt;</div>
+        </div>
+      </p>
+
+      <p><b>3) Rotate the Icon</b>
+        <p>
+          Lastly, to get my icon to rotate, I used the CSS property "rotate". I also used a transition of .2 to smooth out the rotation:
+        </p>
+      </p>
+
+      <div class="indented-example">
+        <div>.nav-checkbox:checked ~ label .fas { </div>
+          <div class="left-space">transform: rotate(90deg);</div>
+          <div class="left-space">transition: .2s;</div>
+        <div>}</div>
+        <br />
+        <div>.nav-checkbox:not(:checked) ~ label .fas { </div>
+          <div class="left-space">transform: rotate(0deg);</div>
+          <div class="left-space">transition: .2s;</div>
+        <div>}</div>
+      </div>
+    </p>
+
+  </div>
+</main>

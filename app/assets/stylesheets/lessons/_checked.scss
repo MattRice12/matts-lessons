@@ -1,0 +1,75 @@
+/* Checked Example */
+
+.container.checked {
+  .checked-example {
+    margin-top: 2rem;
+    min-height: 18rem;
+  }
+
+  .nav-menu-label {
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 0.5rem;
+    height: 1rem;
+    border-radius: 4px;
+  }
+  .nav-checkbox {
+    display: none;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .nav-checkbox:checked ~ label .fas {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transition: .2s;
+  }
+
+  .nav-checkbox:not(:checked) ~ label .fas {
+    transform: rotate(0deg);
+    transition: .2s;
+  }
+
+  .nav-checkbox:checked ~ .nav-list {
+    display: block;
+  }
+
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+    border: 10px solid #E16459;
+    margin: 1rem;
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  .nav-list li {
+    font-size: 16pt;
+    padding: 0.8rem;
+    margin: 0 1rem;
+    border-top: 1px dotted #E16459;
+  }
+
+  .nav-list li:first-child {
+    border-top: none;
+  }
+
+  .nav-list li:hover {
+    text-decoration: underline;
+    color: #E16459;
+    cursor: pointer;
+  }
+
+  @media (min-width: 769px) {
+    .nav-list {
+      width: 40%;
+    }
+  }
+}

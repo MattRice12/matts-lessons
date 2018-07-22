@@ -1,0 +1,30 @@
+/* first-child & nth-child Example */
+
+.container.child {
+
+  .html-example ul li:first-child {
+    color: red;
+  }
+  .html-example-n ul li:nth-child(2) {
+    color: red;
+  }
+  .html-example-n2 ul li:nth-child(2n) {
+    color: red;
+  }
+  .html-example-n3 ul li:nth-child(2n) {
+    background: beige;
+  }
+  .html-example-n3 ul li:nth-child(2n-1) {
+    background: white;
+  }
+  .html-example-last ul li:last-child {
+    color: red;
+  }
+  .html-example-last-n ul li:nth-last-child(2n) {
+    background: beige;
+  }
+  .html-example-last-n ul li:nth-last-child(2n-1) {
+    background: white;
+  }
+  
+}

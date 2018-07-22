@@ -1,0 +1,6 @@
+<h1>Pseudo-classes</h1>
+<ul>
+  <% category.lessons.each do |lesson| %>
+    <li> <%= link_to lesson.title, category_lesson_path(category.view_tag, lesson.view_tag) %> </li>
+  <% end %>
+</ul>

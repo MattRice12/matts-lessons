@@ -1,0 +1,144 @@
+<main>
+  <div class="container child">
+    <h2>:first-child & :nth-child()</h2>
+    <p>We've discussed a few CSS pseudo-classes before:
+      <ul>
+        <li> :hover --> which applies styles to an element when your mouse hovers over that element. </li>
+        <li> :visited --> which applies styles to an a-tag (a link) if that link has been visited. </li>
+        <li> :checked --> which applies styles when a checkbox or radio button is selected. </li>
+      </ul>
+    </p>
+
+    <p>Today, let's discuss the pseudoclasses :first-child and :nth-child. This pseudoclass is appended to an element or class when there are a group of the same elements or classes in that section. Only the first or nth child receives the proceeding styles. </p>
+
+    <h2>:first-child</h2>
+    <p>This applies the style only to the first element in the group.</p>
+    <div class="indented-example">
+      <div>&lt;ul&gt;</div>
+        <div class="left-space">&lt;li&gtItem 1&lt;/i&gt</div>
+        <div class="left-space">&lt;li&gtItem 2&lt;/i&gt</div>
+        <div class="left-space">&lt;li&gtItem 3&lt;/i&gt</div>
+        <div class="left-space">&lt;li&gtItem 4&lt;/i&gt</div>
+      <div>&lt;ul /&gt;</div>
+
+      <br />
+
+      <div>ul li:first-child { </div>
+      <div class="left-space">color: red;</div>
+      <div>}</div>
+
+      <br />
+      <div class="html-example">
+        <b>Result:</b>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>:nth-child</h2>
+    <p>This applies styles to the nth item in the group, where <i>n</i> is the argument you pass into the style. Using same list from above, if we say :nth-child(2), we can select the second item in the group. </p>
+
+    <div class="indented-example">
+      <div>ul li:nth-child(2) { </div>
+      <div class="left-space">color: red;</div>
+      <div>}</div>
+
+      <br />
+      <div class="html-example-n">
+        <b>Result:</b>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>But with :nth-child, we can get even fancier. :nth-child accepts <i>n</i> itself as an argument. Doing so would select every element in the list (not too useful). However, if we pass in <i>2n</i>, now we're selecting every other element in the group. Much more useful.</p>
+
+    <div class="indented-example">
+      <div>ul li:nth-child(2n) { </div>
+      <div class="left-space">color: red;</div>
+      <div>}</div>
+
+      <br />
+      <div class="html-example-n2">
+        <b>Result:</b>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>(2n) allows us to choose every even row in the group. We can also accomplish this by calling :nth-child(even). If we want to choose the odd row, we can either call :nth-child(2n-1) or :nth-child(odd). </p>
+    <p>This is useful when presenting tables. Staggering the background colors helps the reader's eye keep track.</p>
+
+    <div class="indented-example">
+      <div>ul li:nth-child(2n) { </div>
+      <div class="left-space">background: beige;</div>
+      <div>}</div>
+      <div>ul li:nth-child(2n-1) { </div>
+      <div class="left-space">background: white;</div>
+      <div>}</div>
+
+      <br />
+      <div class="html-example-n3">
+        <b>Result:</b>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>:last-child & :nth-last-child()</h2>
+    <p>Like :first-child and :nth-child, :last-child and :nth-last-child select specific items in the group, but from the other direction.</p>
+    <div class="indented-example">
+      <div>ul li:last-child { </div>
+      <div class="left-space">color: blue;</div>
+      <div>}</div>
+
+      <br />
+      <div class="html-example-last">
+        <b>Result:</b>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+      <br />
+      <div class="line"></div>
+      <br />
+      <div>ul li:nth-last-child(2n) { </div>
+      <div class="left-space">background: beige;</div>
+      <div>}</div>
+      <div>ul li:nth-last-child(2n-1) { </div>
+      <div class="left-space">background: white;</div>
+      <div>}</div>
+
+      <br />
+      <div class="html-example-last-n">
+        <b>Result:</b>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br />
+</main>
