@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :categories, param: :view_tag do
-      resources :lessons, param: :view_tag
+  resources :languages, param: :view_tag do
+    resources :categories, param: :view_tag do
+        resources :lessons, param: :view_tag
+    end
   end
-
-  root to: "categories#index"
+  root to: "languages#index"
 end

@@ -1,0 +1,5 @@
+<ul>
+  <% language.categories.each do |category| %>
+    <li> <%= link_to category.title, language_category_path(language.view_tag, category.view_tag) %> </li>
+  <% end %>
+</ul>

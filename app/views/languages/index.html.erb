@@ -1,0 +1,9 @@
+<div class="index-list">
+  <h1>Languages</h1>
+
+  <ul>
+    <% languages.each do |language| %>
+      <li><%= link_to language.title, language_path(view_tag: language.view_tag) %></li>
+    <% end %>
+  </ul>
+</div>

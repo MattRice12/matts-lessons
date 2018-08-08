@@ -1,0 +1,111 @@
+<main>
+      <div class="container">
+        <h2>Overview</h2>
+        <p>
+          Functions are essential to concise, readable, and purposeful code. They are like real-world factories in that they take raw materials, process these materials, and yield a product for us to use.
+        </p>
+        <p>
+          Thus a function has 3 parts:
+          <ol>
+            <li>The arguments given to the function,</li>
+            <li>The processing part of the function, and</li>
+            <li>The return value of the function.</li>
+          </ol>
+        </p>
+        <h2>Function definition</h2>
+        <p>
+          The function definition is the factory before we give it any raw materials. Let's take a look at a function definition:
+        </p>
+        <div class="indented-example">
+          <div>function (arg1, arg2) { </div>
+            <div class="left-space">let result = arg1 + arg2;</div>
+            <div class="left-space">return result;</div>
+          <div>};</div>
+        </div>
+        <p>
+          `arg1` and `arg2` are the arguments of the function. Technically, since this is a function definition, `arg1` and `arg2` are called parameters. As described below, when we call/execute the function, the values we put in are the arguments.
+        </p>
+        <p>
+          Everything inside the curly braces is the body of the function. Here, we are adding the values arg1 and arg2 together and then returning that result.
+        </p>
+        <p>
+          The `return` keyword stops the function and outputs the proceeding value wherever the function is called.
+        </p>
+
+        <h2>Function Call</h2>
+        <p>To make the factory work, we need to give it some raw material as inputs. We give the function these raw materials when we `call` it. </p>
+        <p>
+          In addition to calling the function, I'm also:
+          <ol>
+            <li>Making it more concise, </li>
+            <li>Giving it a name, sum, </li>
+            <li>Assigning the return value of sum() to the variable, `total`.</li>
+          </ol>
+        </p>
+
+        <div class="indented-example">
+          <div>function sum(arg1, arg2) { </div>
+            <div class="left-space">return arg1 + arg2;</div>
+          <div>};</div>
+          <br />
+          <div>let total = sum(2, 3);</div>
+        </div>
+
+        <p>
+          `sum(2, 3)` is our function call. The integers `2` and `3` are the arguments being passed in. The function adds the two values together and returns `5`. We then assign the returned value to the variable `total`.
+        </p>
+
+        <h2>Return</h2>
+        <p>
+          The return value is a particularly important part of the function, such that it deserves its own section.
+        </p>
+        <p>
+          As mentioned above, the return does two things:
+          <ol>
+            <li>The value after the return is the value of the function, and</li>
+            <li>Return terminates the function when it is reached.</li>
+          </ol>
+        </p>
+        <p>
+          We've seen the first part above with `sum(2, 3)`. Since the function returns `2 + 3`, the value of the function is 5. Thus when we assign `sum(2, 3)` to `total`, `total` has the value 5.
+          <small>(*Note, this applies only to pure functions.)</small>
+        </p>
+        <p>
+          If the `return` is left off the function, the functions value is `undefined`.
+        </p>
+        <p>
+          Since the function terminates when it reaches the return, any code written below the return is ignored. Code written below a return will typically only be seen when a function has a conditional with a return. Take the following for example:
+        </p>
+        <div class="indented-example">
+          <div>function size(num) { </div>
+            <div class="left-space">if (num > 5) { </div>
+            <div class="left-space"><div class="left-space">return "large";</div></div>
+            <div class="left-space">};</div>
+            <div class="left-space">return "small";</div>
+          <div>};</div>
+        </div>
+        <p>
+          In the above example, the function terminates and returns "large" if the value of `num` is greater than 5. If the value of `num` is less than or equal to 5, it skips the conditional body and returns "small".
+        </p>
+
+        <!-- <h2>Pure Functions vs. Impure Functions</h2>
+        <p>
+          <b>Pure Functions</b> are functions that doesn't modify or affect the system outside of its scope. The above function example is a pure function. It takes arguments, processes them, and returns a result.
+        </p>
+        <p>
+          <b>Impure Functions</b>, by contrast, modify the system outside of its scope. These modification are called <bold>side effects</bold>. In the following example, the function changes ...321#@!
+        </p>
+
+        <div class="indented-example">
+          <div>let values = { a: 1 } </div>
+          <div>function impureFunction(values) { </div>
+            <div class="left-space">return values.a += 1;</div>
+          <div>};</div>
+          <br />
+          <div>let b = impureFunction(values);</div>
+        </div> -->
+
+
+        <br />
+      </div>
+    </main>
