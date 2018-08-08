@@ -1,5 +1,6 @@
 <div class="index-list">
   <div class="language">
-    <%= render partial: language.view_tag, locals: { language: language } %>
+    <h1><%= language.title %></h1>
+    <%= render partial: "shared/list", object: language.categories %>
   </div>
 </div>

@@ -1,5 +1,0 @@
-<ul>
-  <% category.lessons.each do |lesson| %>
-    <li> <%= link_to lesson.title, language_category_lesson_path(category.language.view_tag, category.view_tag, lesson.view_tag) %> </li>
-  <% end %>
-</ul>

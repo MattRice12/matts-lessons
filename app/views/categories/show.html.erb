@@ -1,5 +1,6 @@
 <div class="index-list">
   <div class="category">
-    <%= render partial: category.view_tag, locals: { category: category } %>
+    <h1><%= category.title %></h1>
+    <%= render partial: "shared/list", object: category.lessons %>
   </div>
 </div>

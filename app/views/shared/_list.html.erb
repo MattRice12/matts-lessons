@@ -1,0 +1,5 @@
+<ul>
+  <% list.each do |item| %>
+    <li> <%= link_to item.title, __send__("#{item.class.name.downcase}_path", item.view_tag) %> </li>
+  <% end %>
+</ul>
