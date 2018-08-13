@@ -19,3 +19,6 @@ ActiveRecord::Base.transaction do
   raise DuplicateCategories if category_count != Category.count
   raise DuplicateLessons    if lesson_count   != Lesson.count
 end
+
+cat = Category.find_by(view_tag: "functions")
+Lesson.create!(title: "If/Else Statements", view_tag: "if-else", category_id: cat.id)
