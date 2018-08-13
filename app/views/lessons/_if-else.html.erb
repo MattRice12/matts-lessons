@@ -1,0 +1,303 @@
+<main>
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      If/else statements are another fundamental part of any sort of programming. These allow us to receive different outputs based on the input.
+    </p>
+    <div class="indented-example">
+      <div>if (condition) { </div>
+        <div class="left-space">return result1;</div>
+      <div>} else { </div>
+        <div class="left-space">return result2;</div>
+      <div>};</div>
+    </div>
+    <p>
+      In the above example, we begin with the line <b>if (condition)</b>. If the condition is <b>truthy</b>, then the code inside the if statement executes. If the condition is <b>falsey</b> then, in this example, the code inside the else statement executes.
+    </p>
+    <p>
+      A value or expression is truthy if it evaluates to true in a Boolean context. We can manually demonstrate this converting the value to a boolean with Boolean(value).
+    </p>
+    <p>
+      Examples of truthy and falsey values:
+    </p>
+    <div class="indented-example">
+
+      <div class="row">
+        <div class="s9 l5 fit">Boolean(true);</div>
+        <div class="s3 l6 fade fit">// true</div>
+      </div>
+
+      <div class="row">
+        <div class="s9 l5 fit">Boolean(false);</div>
+        <div class="s3 l6 fade fit">// false</div>
+      </div>
+
+      <div class="row">
+        <div class="s9 l5 fit">Boolean(1);</div>
+        <div class="s3 l6 fade fit">// true</div>
+      </div>
+
+      <div class="row">
+        <div class="s9 l5 fit">Boolean(0);</div>
+        <div class="s3 l6 fade fit">// false</div>
+      </div>
+
+      <div class="row">
+        <div class="s9 l5 fit">Boolean("");</div>
+        <div class="s3 l6 fade fit">// false</div>
+      </div>
+
+      <div class="row">
+        <div class="s9 l5 fit">Boolean("Hello");</div>
+        <div class="s3 l6 fade fit">// true</div>
+      </div>
+
+      <div class="row">
+        <div class="s9 l5 fit">Boolean(1 > 2);</div>
+        <div class="s3 l6 fade fit">// false</div>
+      </div>
+
+      <div class="row">
+        <div class="s9 l5 fit">Boolean(2 === 2);</div>
+        <div class="s3 l6 fade fit">// false</div>
+      </div>
+    </div>
+    <p>
+      With this in mind, we can build our if/else statements with intention. In the following example, I'm going to build an if/else statement that returns the higher value of two numbers.
+    </p>
+    <div class="indented-example">
+      <div>let a = 2;</div>
+      <div>let b = 3;</div>
+      <br />
+      <div>if (a > b) {</div>
+        <div class="left-space">return a;</div>
+      <div>} else { </div>
+        <div class="left-space">return b;</div>
+      <div>};</div>
+    </div>
+    <p>
+      In this example, the conditional evaluates to false, so the code in the else block executes. Let's put this inside a function called <b>max(a, b)</b> and console.log the results.
+    </p>
+
+    <div class="indented-example">
+      <div>function max(a, b) {</div>
+      <div class="left-space">
+        <div>if (a > b) {</div>
+          <div class="left-space">return a;</div>
+        <div>} else { </div>
+          <div class="left-space">return b;</div>
+        <div>};</div>
+      </div>
+      <div>};</div>
+      <br />
+      <div class="row">
+        <div class="s9 l5 fit"> console.log(max(2, 3));</div>
+        <div class="s3 l6 fade fit">// 3</div>
+      </div>
+    </div>
+
+    <br />
+    <div class="line"></div>
+
+    <h2>Else If</h2>
+    <p>
+      <b>else if</b> is another component of an if statement. The code in the else if section excutes only if (1) the if condition is falsey and (2) the else if statement is truthy.
+    </p>
+    <p>
+      In the following example, the bouncer function returns a response based on the input age.
+    </p>
+
+    <div class="indented-example">
+      <div>function bouncer(age) {</div>
+      <div class="left-space">
+        <div>if (age < 18) {</div>
+          <div class="left-space">return "You're too young to enter";</div>
+        <div>} else if (age >= 18 && age < 21) { </div>
+          <div class="left-space">return "You're old enough to enter but you're too young to drink.";</div>
+        <div>} else { </div>
+          <div class="left-space">return "You're old enough enter and have drinks.";</div>
+        <div>};</div>
+      </div>
+      <div>};</div>
+      <br />
+      <div>let age = prompt("How old are you?");</div>
+      <div>console.log(bouncer(age));</div>
+    </div>
+    <p>
+      If statements can have as many <b>else if</b> blocks as needed. That being said, the more <b>else if</b>s you have, the more likely you should be using something besides an if/else statement, or to refactor the current statement into something less sprawling. On the other hand sprawling if/else statments are sometimes unavoidable.
+    </p>
+    <br />
+    <div class="line"></div>
+
+    <h2>Exercise!</h2>
+    <p>
+      Build a function called <b>seasonFinder</b> with one argument named <b>month</b>. Have this function return the season (Winter, Spring, Summer, Fall) based on what month. Use if/else if/else statements to find this solution.
+    </p>
+    <p>
+      Optional: prompt the user (with prompt()) for their current month, pass their response into the <b>seasonFinder</b> function, and display the result in the console.
+    </p>
+
+    <br />
+    <div class="if-else-example">
+      <input type="checkbox" class="show-answer" id="showLongAnswer" />
+      <label class="btn" for="showLongAnswer">The Long Solution</label>
+
+      <div class="answer">
+        <h4 class="answer-header">The Long Solution</h4>
+        <div class="indented-example">
+          <div>function seasonFinder(month) {</div>
+          <div class="left-space">
+            <div>if (month === "december") {</div>
+              <div class="left-space">return "It's Winter!";</div>
+            <div>} else if (month === "january") {</div>
+              <div class="left-space">return "It's Winter!";</div>
+            <div>} else if (month === "february") {</div>
+              <div class="left-space">return "It's Winter!";</div>
+            <div>} else if (month === "march") { </div>
+              <div class="left-space">return "It's Spring!";</div>
+            <div>} else if (month === "april") { </div>
+              <div class="left-space">return "It's Spring!";</div>
+            <div>} else if (month === "may") { </div>
+              <div class="left-space">return "It's Spring!";</div>
+            <div>} else if (month === "june") { </div>
+              <div class="left-space">return "It's Summer!";</div>
+            <div>} else if (month === "july") { </div>
+              <div class="left-space">return "It's Summer!";</div>
+            <div>} else if (month === "august") { </div>
+              <div class="left-space">return "It's Summer!";</div>
+            <div>} else if (month === "september") { </div>
+              <div class="left-space">return "It's Fall!";</div>
+            <div>} else if (month === "october") { </div>
+              <div class="left-space">return "It's Fall!";</div>
+            <div>} else if (month === "december") { </div>
+              <div class="left-space">return "It's Fall!";</div>
+            <div>} else { </div>
+              <div class="left-space">
+                <div>month = prompt(`"${month}" is not a valid input. What month is it?`).toLowerCase(); </div>
+                <div>return seasonFinder(month);</div>
+              </div>
+            <div>};</div>
+          </div>
+          <div>};</div>
+          <br />
+          <div>let month = prompt("What month is it?").toLowerCase();</div>
+          <div>console.log(seasonFinder(month));</div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="if-else-example">
+      <input type="checkbox" class="show-answer" id="showShorterAnswer" />
+      <label class="btn" for="showShorterAnswer">The Shorter Solution</label>
+
+      <br />
+
+      <div class="answer">
+        <h4 class="answer-header">The Shorter Solution</h4>
+        <div class="indented-example">
+          <div>function seasonFinder(month) {</div>
+          <div class="left-space">
+            <div>if (month === "december" || month === "january" || month === "february") {</div>
+              <div class="left-space">return "It's Winter!";</div>
+            <div>} else if (month === "march" || month === "april" || month === "may") { </div>
+              <div class="left-space">return "It's Spring!";</div>
+            <div>} else if (month === "june" || month === "july" || month === "august") { </div>
+              <div class="left-space">return "It's Summer!";</div>
+            <div>} else if (month === "september" || month === "october" || month === "november") { </div>
+              <div class="left-space">return "It's Fall!";</div>
+            <div>} else { </div>
+              <div class="left-space">
+                <div>month = prompt(`"${month}" is not a valid input. What month is it?`).toLowerCase(); </div>
+                <div>return seasonFinder(month);</div>
+              </div>
+            <div>};</div>
+          </div>
+          <div>};</div>
+          <br />
+          <div>let month = prompt("What month is it?").toLowerCase();</div>
+          <div>console.log(seasonFinder(month));</div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="if-else-example">
+      <input type="checkbox" class="show-answer" id="showEvenShorterAnswer" />
+      <label class="btn" for="showEvenShorterAnswer">The Even Shorter Solution</label>
+
+      <br />
+
+      <div class="answer">
+        <h4 class="answer-header">The Even Shorter Solution</h4>
+        <div class="indented-example">
+          <div>function seasonFinder(month) {</div>
+          <div class="left-space">
+            <div>if (["december", "january", "february"].includes(month)) {</div>
+              <div class="left-space">return "It's Winter!";</div>
+            <div>} else if (["march", "april", "may"].includes(month)) { </div>
+              <div class="left-space">return "It's Spring!";</div>
+            <div>} else if (["june", "july", "august"].includes(month)) { </div>
+              <div class="left-space">return "It's Summer!";</div>
+            <div>} else if (["september", "october", "november"].includes(month)) { </div>
+              <div class="left-space">return "It's Fall!";</div>
+            <div>} else { </div>
+              <div class="left-space">
+                <div>month = prompt(`"${month}" is not a valid input. What month is it?`).toLowerCase(); </div>
+                <div>return seasonFinder(month);</div>
+              </div>
+            <div>};</div>
+          </div>
+          <div>};</div>
+          <br />
+          <div>let month = prompt("What month is it?").toLowerCase();</div>
+          <div>console.log(seasonFinder(month));</div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="if-else-example">
+      <input type="checkbox" class="show-answer" id="showShortestAnswer" />
+      <label class="btn" for="showShortestAnswer">The Even Shorter-er Solution</label>
+
+      <br />
+
+      <div class="answer">
+        <h4 class="answer-header">The Even Shorter-er Solution without obfuscating too much</h4>
+        <div class="indented-example">
+          <div>const seasonObject = {</div>
+            <div class="left-space">
+              <div>"Winter": ["december", "january", "february"],</div>
+              <div>"Spring": ["march", "april", "may"],</div>
+              <div>"Summer": ["june", "july", "august"],</div>
+              <div>"Fall":   ["august", "september", "october"]</div>
+            </div>
+          <div>};</div>
+
+          <br />
+
+          <div>const seasonFinder = (month) => {</div>
+          <div class="left-space">
+            <div>let season = Object.keys(seasonObject).filter(season => {</div>
+              <div class="left-space">return seasonObject[season].includes(month.toLowerCase());</div>
+            <div>});</div>
+            <div>if (season.length > 0) {</div>
+              <div class="left-space">return `It's ${season}!`;</div>
+            <div>} else { </div>
+              <div class="left-space">
+                <div>month = prompt(`"${month}" is not a valid input. What month is it?`); </div>
+                <div>return seasonFinder(month);</div>
+              </div>
+            <div>};</div>
+          </div>
+          <div>};</div>
+          <br />
+          <div>let month = prompt("What month is it?");</div>
+          <div>console.log(seasonFinder(month));</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

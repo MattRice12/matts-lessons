@@ -14,7 +14,9 @@
   </head>
 
   <body>
-    <%= link_to "Home", root_path, class: "button__home" %>
+    <div class="nav-bar">
+      <%= link_to "Home", root_path, class: "button__home" %>
+    </div>
     <%= yield %>
   </body>
 </html>

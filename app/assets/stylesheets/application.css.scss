@@ -20,10 +20,10 @@
 
 @import 'lessons/checked';
 @import 'lessons/child';
+@import 'lessons/if-else';
 
 
-.button__home {
-  float: left;
+.btn {
   color: black;
   border: 1px solid black;
   background: white;
@@ -33,6 +33,31 @@
   transition: 0.2s;
   text-decoration: none;
   margin: 1rem;
+  margin-left: 0;
+  cursor: pointer;
+  &:hover {
+    background: lightgray;
+    transition: 0.2s;
+  }
+}
+
+.nav-bar {
+  height: 5rem;
+  background: darken(#73B4D2, 40%);
+}
+
+.button__home {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: black;
+  border: 1px solid black;
+  background: white;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 1rem 2rem;
+  transition: 0.2s;
+  text-decoration: none;
   &:hover {
     background: lightgray;
     transition: 0.2s;
@@ -45,5 +70,11 @@
   ul {
     list-style-type: none;
     padding: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .nav-bar {
+    height: 0;
   }
 }
