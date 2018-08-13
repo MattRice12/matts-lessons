@@ -5,7 +5,7 @@
 .lesson {
   background: #73B4D2;
   font-family: 'Asap', sans-serif;
-  font-size: 13pt;
+  font-size: 12pt;
   padding: 1rem;
 }
 
@@ -60,32 +60,45 @@ main {
 }
 
 .indented-example {
-  margin-left: 1rem;
   background: #ddd;
-  width: fit-content;
   min-width: 80%;
   padding: 1rem;
   border-radius: 2px;
   font-weight: 100;
   border-left: 4px solid #73B4D2;
+  width: 80vw;
+  overflow: scroll;
 }
 
 .answer-header {
   margin-bottom: 1rem;
 }
 
+@media (min-width: 460px) {
+  .indented-example {
+    // width: 83vw;
+  }
+}
+
 @media (min-width: 620px) {
   .lesson {
+    font-size: 13pt;
     padding: 1rem 5%;
   }
 
   .container {
     padding: 0 5rem;
   }
+  .indented-example {
+    margin-left: 1rem;
+  }
 }
 
 @media (min-width: 1025px) {
   .lesson {
     padding: 1rem 20%;
+  }
+  .indented-example {
+    width: fit-content;
   }
 }
